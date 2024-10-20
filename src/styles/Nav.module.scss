@@ -36,26 +36,26 @@ form {
 
 @media screen and (max-width: 1176px) {
   form input {
-    width: 45%;
+    width: 50%;
   }
 }
 
 @media screen and (max-width: 800px) {
+  nav {
+    padding: 3rem 2rem;
+  }
   form input {
-    width: 60%;
+    width: 65%;
   }
 }
 @media screen and (max-width: 500px) {
   form {
+    display: flex;
     input {
-      width: 60%;
+      width: 100%;
     }
     button {
       padding: 0.5rem 1rem;
-    }
-    input,
-    button {
-      font-size: 1.4rem;
     }
   }
 }

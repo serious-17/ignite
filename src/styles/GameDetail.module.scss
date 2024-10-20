@@ -1,0 +1,100 @@
+.detailContainer {
+  z-index: 10;
+  background: rgba($color: #000000, $alpha: 0.5);
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 2rem 10rem;
+  cursor: pointer;
+  img {
+    width: 100%;
+  }
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #ff7676;
+  }
+}
+
+.gameDetails {
+  background: white;
+  cursor: auto;
+  border-radius: 1rem;
+  padding: 4rem 5rem;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  h3 {
+    font-size: 1.3rem;
+    padding: 1.5rem 0rem;
+  }
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+}
+.rating {
+  img {
+    width: 2rem;
+  }
+}
+
+.platforms {
+  text-align: center;
+  img {
+    width: 2rem;
+    margin-right: 1rem;
+  }
+}
+
+.bg_image {
+  margin-top: 4rem;
+}
+
+.desc {
+  margin: 5rem 0rem;
+}
+
+@media screen and (max-width: 1176px) {
+  .detailContainer {
+    padding: 2rem 5rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .detailContainer {
+    padding: 2rem 3rem;
+  }
+  .gameDetails {
+    padding: 2rem 0rem;
+  }
+  .title {
+    padding: 0rem 1rem;
+  }
+  .desc {
+    padding: 0rem 1rem;
+  }
+  .rating img {
+    width: 1.5rem;
+  }
+  .platforms img {
+    width: 1.5rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .detailContainer {
+    padding: 2rem;
+  }
+  .title {
+    padding: 0rem 0.5rem;
+  }
+  .desc {
+    padding: 0rem 0.5rem;
+  }
+}

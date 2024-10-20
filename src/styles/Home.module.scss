@@ -1,0 +1,53 @@
+.home {
+  padding: 0rem 5rem;
+}
+
+.gameList {
+  h2 {
+    padding: 5rem 0rem;
+  }
+}
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  row-gap: 5rem;
+  column-gap: 3rem;
+
+  &:last-child {
+    margin-bottom: 4rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .home {
+    padding: 2rem 3rem;
+  }
+  .gameList h2 {
+    padding: 4rem 0rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .home {
+    padding: 2rem 2rem;
+  }
+  .games {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .gameList h2 {
+    padding: 3rem 0rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .games:last-child {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 350px) {
+  .home {
+    padding: 2rem 1rem;
+  }
+  .gameList h2 {
+    padding-bottom: 2rem;
+  }
+}

@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:ital@0;1&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #bdbdbd;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
+input {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  border: none;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: "Abril Fatface", sans-serif;
+  font-weight: lighter;
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 1500px) {
+  html {
+    font-size: 85%;
+  }
+}
+@media screen and (max-width: 1176px) {
+  html {
+    font-size: 80%;
+  }
+}
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 70%;
+  }
+}

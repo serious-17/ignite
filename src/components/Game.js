@@ -12,7 +12,7 @@ const Game = ({ game }) => {
   const [id, setId] = useAtom(currentGameID);
   const [about, setAbout] = useAtom(currentGameDetail);
 
-  const setGameId = async () => {
+  const loadGameHandler = async () => {
     const details = await fetchData(gameDetailURL(game.id));
     const screenshots = await fetchData(gameScreenshotsURL(game.id));
 
@@ -35,7 +35,7 @@ const Game = ({ game }) => {
       initial="hidden"
       layoutId={game.id}
       className={style.game}
-      onClick={setGameId}
+      onClick={loadGameHandler}
     >
       <motion.h3 layoutId={`title ${game.id}`}>{game.name}</motion.h3>
       <p>{game.released}</p>

@@ -14,14 +14,14 @@ import gamepad from "../images/gamepad.svg";
 import starEmpty from "../images/star-empty.png";
 import starFull from "../images/star-full.png";
 
-const GameDetails = () => {
+const GameDetails = ({ id }) => {
   const [details, setDetails] = useAtom(currentGameDetail);
   const { game, screen } = details;
-  const [id, setId] = useAtom(currentGameID);
+  const [path, setPath] = useAtom(currentGameID);
 
   const closeDetails = (e) => {
     if (e.target.classList.contains("shadow")) {
-      setId(null);
+      setPath(null);
       document.body.style.overflow = "auto";
       document.body.style.paddingRight = `0rem`;
     }

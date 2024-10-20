@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import GameDetails from "../components/GameDetails";
 import Game from "../components/Game";
 import { FadeIn } from "../animation";
+import { AnimatePresence } from "framer-motion";
 
 const Home = () => {
   const [games, setGames] = useAtom(gamesData);
@@ -44,7 +45,7 @@ const Home = () => {
     >
       <div className={style.gameList}>
         <LayoutGroup>
-          {id && <GameDetails />}
+          <AnimatePresence>{id && <GameDetails id={id} />}</AnimatePresence>
 
           {searchedGames.length ? (
             <>

@@ -6,6 +6,7 @@ export const gamesData = atom({
   popularGames: [],
   upcomingGames: [],
   searchedGames: [],
+  isLoading: true,
 });
 
 export const currentGameDetail = atom({

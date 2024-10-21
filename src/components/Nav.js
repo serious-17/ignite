@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import logo from "../images/logo.svg";
 import style from "../styles/Nav.module.scss";
-import { gamesData, darkModeState } from "./states";
+import { gamesData, darkModeState, searchResults } from "./states";
 import { useAtom } from "jotai";
 import { searchedGamesURL } from "../api";
 import fetchData from "./fetchData";
@@ -26,7 +26,6 @@ const Nav = () => {
     e.preventDefault();
     setSearch("");
     const result = await fetchData(searchedGamesURL(search));
-
     setGames({ ...games, searchedGames: result.data.results });
     navigate("/");
   };

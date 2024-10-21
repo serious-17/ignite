@@ -14,7 +14,6 @@ function App() {
         <Routes>
           <Route path="/" Component={Home} />
           <Route path="/game/:id" Component={GameDetails} />
-          <Route path="/game/:id" Component={AnimatePresence} />
         </Routes>
       </AnimatePresence>
     </div>

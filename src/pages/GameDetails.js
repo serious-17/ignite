@@ -21,6 +21,7 @@ import starFull from "../images/star-full.png";
 import { exit } from "../animation";
 import fetchData from "../components/fetchData";
 import { gameDetailURL, gameScreenshotsURL } from "../api";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const GameDetails = () => {
   const { pathname } = useLocation();

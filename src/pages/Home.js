@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 
 import Game from "../components/Game";
 import { FadeIn } from "../animation";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const Home = () => {
   const [games, setGames] = useAtom(gamesData);
@@ -16,7 +17,7 @@ const Home = () => {
 
   if (dark) {
     document.body.style.color = `white`;
-    document.body.style.background = `#141414`;
+    document.body.style.background = `#1b1b1b`;
   } else {
     document.body.style.color = `black`;
     document.body.style.background = `white`;
@@ -32,6 +33,7 @@ const Home = () => {
       newGames: newGames.data.results,
       popularGames: populargames.data.results,
       upcomingGames: upcomingGames.data.results,
+      isLoading: false,
     });
   };
 
@@ -66,6 +68,14 @@ const Home = () => {
 
           <motion.h2 layout>Upcoming Games</motion.h2>
           <div className={style.games}>
+            {games.isLoading && (
+              <Icon
+                icon="line-md:loading-twotone-loop"
+                width="32px"
+                height="32px"
+                style={{ color: dark ? "white" : "black" }}
+              />
+            )}
             {upcomingGames.map((game) => (
               <Game game={game} key={game.id} />
             ))}
@@ -73,6 +83,14 @@ const Home = () => {
 
           <motion.h2 layout>Popular Games</motion.h2>
           <div className={style.games}>
+            {games.isLoading && (
+              <Icon
+                icon="line-md:loading-twotone-loop"
+                width="32px"
+                height="32px"
+                style={{ color: dark ? "white" : "black" }}
+              />
+            )}
             {popularGames.map((game) => (
               <Game game={game} key={game.id} />
             ))}
@@ -80,6 +98,14 @@ const Home = () => {
 
           <motion.h2 layout>New Games</motion.h2>
           <div className={style.games}>
+            {games.isLoading && (
+              <Icon
+                icon="line-md:loading-twotone-loop"
+                width="32px"
+                height="32px"
+                style={{ color: dark ? "white" : "black" }}
+              />
+            )}
             {newGames.map((game) => (
               <Game game={game} key={game.id} />
             ))}

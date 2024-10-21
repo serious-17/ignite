@@ -25,6 +25,12 @@
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
   }
+  .platforms img {
+    filter: invert(100%);
+  }
+  .platforms img.steam {
+    filter: invert(0%);
+  }
 }
 .rating {
   img {

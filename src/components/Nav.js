@@ -39,6 +39,14 @@ const Nav = () => {
     setGames({ ...games, searchedGames: [] });
   };
 
+  if (dark) {
+    document.body.style.color = `white`;
+    document.body.style.background = `#141414`;
+  } else {
+    document.body.style.color = `black`;
+    document.body.style.background = `white`;
+  }
+
   useEffect(() => {
     setDark(darkModeHandler(dark, "isDark?"));
   }, []);

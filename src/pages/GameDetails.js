@@ -122,11 +122,17 @@ const GameDetails = () => {
           </div>
           <div className={style.platforms}>
             <h3>Platforms:</h3>
+
             {game.platforms.map((platform) => (
               <img
                 key={platform.platform.name}
                 src={getPlatform(platform.platform.name)}
-              ></img>
+                className={
+                  getPlatform(platform.platform.name) === steam
+                    ? style.steam
+                    : ""
+                }
+              />
             ))}
           </div>
         </div>

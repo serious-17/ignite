@@ -78,7 +78,7 @@ const Nav = () => {
       <FontAwesomeIcon
         onClick={() => setDark(darkModeHandler(dark, "toggle"))}
         className={style.svg}
-        icon={dark ? faSun : faMoon}
+        icon={dark ? faMoon : faSun}
         size="2x"
         color={dark ? "white" : "black"}
       />

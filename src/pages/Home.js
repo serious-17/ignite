@@ -7,7 +7,7 @@ import style from "../styles/Home.module.scss";
 import { LayoutGroup } from "framer-motion";
 import { motion } from "framer-motion";
 
-import GameDetails from "../components/GameDetails";
+import GameDetails from "./GameDetails";
 import Game from "../components/Game";
 import { FadeIn } from "../animation";
 import { AnimatePresence } from "framer-motion";
@@ -45,8 +45,6 @@ const Home = () => {
     >
       <div className={style.gameList}>
         <LayoutGroup>
-          <AnimatePresence>{id && <GameDetails id={id} />}</AnimatePresence>
-
           {searchedGames.length ? (
             <>
               <h2>Searched Games</h2>

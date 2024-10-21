@@ -7,10 +7,16 @@ import { searchedGamesURL } from "../api";
 import fetchData from "./fetchData";
 import { motion } from "framer-motion";
 import { FadeIn } from "../animation";
+import { useNavigate, useLocation } from "react-router-dom";
+import { currentGameID } from "./states";
 
 const Nav = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [search, setSearch] = useState("");
   const [games, setGames] = useAtom(gamesData);
+  const { pathname } = location;
+  const [id] = useAtom(currentGameID);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -18,11 +24,14 @@ const Nav = () => {
     const result = await fetchData(searchedGamesURL(search));
 
     setGames({ ...games, searchedGames: result.data.results });
-
-    console.log(search);
+    navigate("/");
   };
 
   const clearSearch = () => {
+    if (pathname === `/game/${id}`) {
+      navigate(`/`);
+      return;
+    }
     setGames({ ...games, searchedGames: [] });
   };
 

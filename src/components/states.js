@@ -11,6 +11,7 @@ export const gamesData = atom({
 export const currentGameDetail = atom({
   game: [],
   screen: [],
+  isLoading: true,
 });
 
 export const currentGameID = atom(null);

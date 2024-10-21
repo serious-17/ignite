@@ -2,9 +2,16 @@
   background: white;
   cursor: auto;
   padding: 4rem 10rem;
+  transition: all 0.5s ease;
+  color: black;
   img {
     width: 100%;
   }
+}
+
+.gameDetails.dark {
+  background: #1b1b1b;
+  color: white;
 }
 
 .title {

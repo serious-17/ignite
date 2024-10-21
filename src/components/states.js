@@ -15,3 +15,5 @@ export const currentGameDetail = atom({
 });
 
 export const currentGameID = atom(null);
+
+export const darkModeState = atom(false);

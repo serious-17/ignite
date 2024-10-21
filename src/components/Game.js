@@ -1,6 +1,6 @@
 import React from "react";
 import style from "../styles/Game.module.scss";
-import { currentGameID, currentGameDetail } from "./states";
+import { currentGameID, currentGameDetail, darkModeState } from "./states";
 import { useAtom } from "jotai";
 import smallImg from "./smallImg";
 import fetchData from "./fetchData";
@@ -11,8 +11,8 @@ import { Link } from "react-router-dom";
 
 const Game = ({ game }) => {
   const [id, setId] = useAtom(currentGameID);
-
   const [about, setAbout] = useAtom(currentGameDetail);
+  const [dark] = useAtom(darkModeState);
 
   const loadGameHandler = async () => {
     setAbout({ ...about, isLoading: true });
@@ -36,7 +36,7 @@ const Game = ({ game }) => {
       exit="exit"
       initial="hidden"
       layoutId={game.id}
-      className={style.game}
+      className={`${style.game} ${dark ? style.dark : ""}`}
       onClick={loadGameHandler}
     >
       <Link to={`/game/${game.id}`}>

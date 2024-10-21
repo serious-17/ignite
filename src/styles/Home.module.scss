@@ -1,5 +1,10 @@
 .home {
   padding: 0rem 5rem;
+  transition: 0.5s ease;
+  background: white;
+}
+.home.dark {
+  background: #1b1b1b;
 }
 
 .gameList {

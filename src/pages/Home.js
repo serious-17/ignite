@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { currentGameID, gamesData } from "../components/states";
+import { gamesData, darkModeState } from "../components/states";
 import { useAtom } from "jotai";
 import { newGamesURL, popularGamesURL, upcomingGamesURL } from "../api";
 import fetchData from "../components/fetchData";
@@ -7,14 +7,20 @@ import style from "../styles/Home.module.scss";
 import { LayoutGroup } from "framer-motion";
 import { motion } from "framer-motion";
 
-import GameDetails from "./GameDetails";
 import Game from "../components/Game";
 import { FadeIn } from "../animation";
-import { AnimatePresence } from "framer-motion";
 
 const Home = () => {
   const [games, setGames] = useAtom(gamesData);
-  const [id] = useAtom(currentGameID);
+  const [dark] = useAtom(darkModeState);
+
+  if (dark) {
+    document.body.style.color = `white`;
+    document.body.style.background = `#141414`;
+  } else {
+    document.body.style.color = `black`;
+    document.body.style.background = `white`;
+  }
 
   const getData = async () => {
     const newGames = await fetchData(newGamesURL());
@@ -41,7 +47,7 @@ const Home = () => {
       initial="hidden"
       animate="show"
       exit="exit"
-      className={style.home}
+      className={`${style.home} ${dark ? style.dark : ""}`}
     >
       <div className={style.gameList}>
         <LayoutGroup>

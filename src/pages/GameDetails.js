@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import { useAtom } from "jotai";
-import { currentGameDetail, currentGameID } from "../components/states";
+import {
+  currentGameDetail,
+  currentGameID,
+  darkModeState,
+} from "../components/states";
 import smallImg from "../components/smallImg";
 import style from "../styles/GameDetail.module.scss";
 import { motion } from "framer-motion";
@@ -24,6 +28,7 @@ const GameDetails = () => {
   const [details, setDetails] = useAtom(currentGameDetail);
   const { game, screen } = details;
   const [path, setPath] = useAtom(currentGameID);
+  const [dark] = useAtom(darkModeState);
 
   const getPlatform = (platform) => {
     switch (platform) {
@@ -103,7 +108,10 @@ const GameDetails = () => {
       exit="exit"
       className={`${style.detailContainer} shadow`}
     >
-      <motion.div layoutId={path} className={style.gameDetails}>
+      <motion.div
+        layoutId={path}
+        className={`${style.gameDetails} ${dark ? style.dark : ""}`}
+      >
         <div className={style.title}>
           <div className={style.info}>
             <motion.h3 layoutId={`title ${path}`}>{game.name}</motion.h3>
